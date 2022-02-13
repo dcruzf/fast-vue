@@ -7,7 +7,7 @@ const routes = [
     { path: '/', component: HomeCopy },
 ]
 
-const router = createRouter({
+export const router = createRouter({
     history: createWebHashHistory(),
     routes: routes})
 
