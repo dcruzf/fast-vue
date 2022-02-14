@@ -5,7 +5,7 @@ const store = useCounterStore();
 </script>
 <template>
   <div>
-    <h1 class="text-3xl font-bold underline" @click="store.increment()">
+    <h1 class="text-3xl font-bold" @click="store.increment()">
       Nice #{{ store.counter }}
     </h1>
     <router-link to="/"> go copy! </router-link>
