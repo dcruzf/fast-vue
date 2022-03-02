@@ -1,26 +1,32 @@
 <template>
-  <div :data-theme="store.theme">
+  <div class="bg-base-100 drawer h-screen" :data-theme="store.theme">
+    <input id="drawer" type="checkbox" class="drawer-toggle" />
+    <div
+      class="drawer-content"
+      style="scroll-behavior: smooth; scroll-padding-top: 5rem"
+    >
+      <div
+        class="sticky top-0 z-30 flex h-16 w-full justify-center bg-opacity-90 backdrop-blur transition-all duration-100 text-primary-content"
+      >
         <Navbar />
-    <div class="rounded-lg shadow bg-base-200 drawer h-screen rounded-none">
-      <input id="my-drawer" type="checkbox" class="drawer-toggle" />
-      <div class="drawer-content">
-        <router-view />
-        <button class="btn btn-primary" @click="store.randomTheme()">
-          change
-        </button>
       </div>
-      <div class="drawer-side">
-        <label for="my-drawer" class="drawer-overlay"></label>
-        <DrawerMenu />
+      <div class="">
+        <Hero />
+        <router-view />
+      
       </div>
     </div>
+   <DrawerMenu />
   </div>
 </template>
 
 <script setup>
+import { ref } from "vue";
 import { useThemeStore, themes } from "../store/theme";
 import DrawerMenu from "./DrawerMenu.vue";
-import Navbar from './NavBar.vue'
+import Navbar from "./NavBar.vue";
+import Hero from "./Hero.vue";
+import Card from "./Card.vue";
 const store = useThemeStore();
 </script>
 
