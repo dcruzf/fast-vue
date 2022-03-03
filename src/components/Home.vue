@@ -55,7 +55,7 @@ const articles = [
 <template>
   <div class="bg-base-200 flex flex-col items-center gap-20 py-20">
     <div
-      class="text-base-content glass xl:rounded-box -mt-48 grid max-w-screen-xl gap-4 bg-opacity-60 xl:pb-0"
+      class="text-base-content glass rounded-box -mt-48 grid max-w-screen-xl gap-4 bg-opacity-60 xl:pb-0"
     >
       <div class="px-2 pt-2">
         <div class="text-primary-content rounded-box space-x-1">
