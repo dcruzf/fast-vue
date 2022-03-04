@@ -1,9 +1,12 @@
 <script setup>
+import { useRoute } from "vue-router";
 import { useArticlesStore } from "../store/article";
+
+const route = useRoute();
 const store = useArticlesStore();
+
+const article = store.articleById(route.params.id);
 </script>
 <template>
-  <h1>{{ $route.params.id }}</h1>
-  <!-- <h1>{{ store.getArticlesById($route.params.id) }}</h1> -->
-  <h1>{{ store.getArticleById($route.params.id) }}</h1>
+  <h1 class="text-4xl text-center">{{ article }}</h1>
 </template>

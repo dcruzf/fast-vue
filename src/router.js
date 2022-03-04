@@ -4,9 +4,10 @@ import Article from "./components/Article.vue";
 import Art from "./components/Art.vue";
 
 const routes = [
-  { path: "/", component: Home },
+  { path: "/", name: "home", component: Home },
   { path: "/article", component: Article },
-  { path: "/art/:id", component: Art },
+  { path: "/art/:id", component: Article },
+  { path: "/:pathMatch(.*)*", component: Home },
 ];
 
 export const router = createRouter({

@@ -5,10 +5,10 @@ export const useArticlesStore = defineStore("articlesStore", {
     articles: [
       {
         id: 1,
-        title: "t",
-        subtitle: "T",
+        title: "Modern Python Environments",
+        subtitle: "Dependency and workspace management",
         abstract: "test",
-        text: "test",
+        text: '<p>Once you get through the pain of setting up a Python environment for a single "hello world"-esque application, you\'ll need to go through an even more difficult process of figuring out how to manage multiple environments for multiple Python projects. Some of the projects could be new while others are stale piles of code from ten years ago. Fortunately, there a number of tools available to help make dependency and workspace management easier.</p><p>Once you get through the pain of setting up a Python environment for a single "hello world"-esque application, you\'ll need to go through an even more difficult process of figuring out how to manage multiple environments for multiple Python projects. Some of the projects could be new while others are stale piles of code from ten years ago. Fortunately, there a number of tools available to help make dependency and workspace management easier.</p><p>Once you get through the pain of setting up a Python environment for a single "hello world"-esque application, you\'ll need to go through an even more difficult process of figuring out how to manage multiple environments for multiple Python projects. Some of the projects could be new while others are stale piles of code from ten years ago. Fortunately, there a number of tools available to help make dependency and workspace management easier.</p>',
         date: "March, 2 2022",
         author: "Daniel",
         tags: ["tag1", "tag2", "tag3"],
@@ -95,11 +95,9 @@ export const useArticlesStore = defineStore("articlesStore", {
       },
     ],
   }),
-  actions: {},
   getters: {
-    articles: (state) => state.articles,
-    getArticleById: (state) => {
-      return (id) => state.articles.find((article) => article.id === id);
-    },
+    article: (state) => state.articles,
+    articleById: (state) => (articleId) =>
+      state.articles.find((article) => article.id == articleId),
   },
 });

@@ -1,40 +1,47 @@
 <template>
-    <div class="bg-base-200 flex flex-col items-center gap-20 py-20">
+  <div class="bg-base-200 flex flex-col items-center gap-20 py-20">
     <div
-      class="text-base-content glass rounded-box -mt-48 grid max-w-screen-xl gap-4 bg-opacity-60 xl:pb-0"
+      class="text-primary-content glass rounded-box -mt-48 max-w-screen-md xl:pb-0"
     >
-      
-      <div class="indicator w-full">
-  <span class="indicator-item indicator-top indicator-center badge badge-primary  bg-transparent mt-5">March, 02 2022</span>
+      <div class="text-sm text-center -mt-5 self-center">
+        {{ article.date }}
       </div>
 
-      <div
-        id="article"
-        class="flex flex-col max-w-screen-md justify-self-center py-20 px-10 pt-1 pb-10"
-      >
-        <div class="text-center pt-5 pb-10 text-primary-content">
-        <h1 class="text-3xl font-bold"> Bom título</h1>
-        <h2 class="text-2xl"> Bom subtítulo</h2>
-      </div>
-        <article class="text-justify prose">
-            <p>One thing to note when using routes with params is that when the user navigates from <code>/users/johnny</code> to <code>/users/jolyne</code>, <strong>the same component instance will be reused</strong>. Since both routes render the same component, this is more efficient than destroying the old instance and then creating a new one. <strong>However, this also means that the lifecycle hooks of the component will not be called</strong>.</p>
-            <p>One thing to note when using routes with params is that when the user navigates from <code>/users/johnny</code> to <code>/users/jolyne</code>, <strong>the same component instance will be reused</strong>. Since both routes render the same component, this is more efficient than destroying the old instance and then creating a new one. <strong>However, this also means that the lifecycle hooks of the component will not be called</strong>.</p>
-            <p>One thing to note when using routes with params is that when the user navigates from <code>/users/johnny</code> to <code>/users/jolyne</code>, <strong>the same component instance will be reused</strong>. Since both routes render the same component, this is more efficient than destroying the old instance and then creating a new one. <strong>However, this also means that the lifecycle hooks of the component will not be called</strong>.</p>
-            <p>One thing to note when using routes with params is that when the user navigates from <code>/users/johnny</code> to <code>/users/jolyne</code>, <strong>the same component instance will be reused</strong>. Since both routes render the same component, this is more efficient than destroying the old instance and then creating a new one. <strong>However, this also means that the lifecycle hooks of the component will not be called</strong>.</p>
-            <p>One thing to note when using routes with params is that when the user navigates from <code>/users/johnny</code> to <code>/users/jolyne</code>, <strong>the same component instance will be reused</strong>. Since both routes render the same component, this is more efficient than destroying the old instance and then creating a new one. <strong>However, this also means that the lifecycle hooks of the component will not be called</strong>.</p>
-            <p>One thing to note when using routes with params is that when the user navigates from <code>/users/johnny</code> to <code>/users/jolyne</code>, <strong>the same component instance will be reused</strong>. Since both routes render the same component, this is more efficient than destroying the old instance and then creating a new one. <strong>However, this also means that the lifecycle hooks of the component will not be called</strong>.</p>
-        </article>
+      <div id="article" class="flex flex-col py-20 px-10 pt-0 pb-10">
+        <div class="text-center pb-10">
+          <h1 class="text-3xl font-bold pt-2">{{ article.title }}</h1>
+          <h2 class="text-2xl">{{ article.subtitle }}</h2>
+        </div>
+        <article
+          class="text-base-content text-justify prose self-center"
+          v-html="article.text"
+        ></article>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
+import { useRoute, useRouter } from "vue-router";
+import { useArticlesStore } from "../store/article";
 
+const route = useRoute();
+const router = useRouter();
+const store = useArticlesStore();
+
+function getArticleOr404(articleId) {
+  let article = store.articleById(articleId);
+  if (!article) {
+    router.push("1");
+    article = store.articleById(1);
+  }
+  return article;
+}
+const article = getArticleOr404(route.params.id);
 </script>
 
 <style scoped>
 p {
-    @apply py-1
+  @apply py-1;
 }
 </style>
