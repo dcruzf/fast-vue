@@ -29,13 +29,13 @@ export const themes = {
 };
 export const useThemeStore = defineStore("themeStore", {
   state: () => ({
-    themeName: themes.light,
+    themeName: window.localStorage.getItem('theme'),
   }),
   actions: {
     changeTheme(themeName) {
       if (themes.hasOwnProperty(themeName)) {
         this.themeName = themeName;
-        console.log(this.themeName);
+        window.localStorage.setItem('theme', themeName)
       } else {
         throw "InvalidTheme";
       }
