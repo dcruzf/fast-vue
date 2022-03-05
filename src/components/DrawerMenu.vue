@@ -6,7 +6,7 @@
       <label for="drawer" class="drawer-overlay"></label>
       <aside class="glass w-80">
         <div
-          class="z-20 bg-base-200 bg-opacity-90 backdrop-blur sticky top-0 items-center gap-2 px-4 py-2 hidden shadow-sm"
+          class="z-20 bg-base-200 bg-opacity-20 sticky top-0 items-center gap-2 px-4 py-2 shadow-sm"
         >
           <a
             href="/"
@@ -14,17 +14,9 @@
             aria-label="Homepage"
             class="flex-0 btn btn-ghost px-2"
             ><div
-              class="font-title text-primary inline-flex text-lg transition-all duration-200 md:text-3xl"
+              class="font-title text-primary-content text-bold inline-flex text-lg transition-all duration-200 md:text-3xl"
             >
-              <span class="lowercase">daisy</span>
-              <span class="text-base-content uppercase">UI</span>
-            </div></a
-          >
-          <a
-            href="/docs/changelog"
-            class="link link-hover font-mono text-xs text-opacity-50"
-            ><div data-tip="Changelog" class="tooltip tooltip-bottom">
-              2.2.2
+              <span class="lowercase">dcruzf</span>
             </div></a
           >
         </div>

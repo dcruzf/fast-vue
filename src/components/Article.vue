@@ -1,7 +1,7 @@
 <template>
   <div class="bg-base-200 flex flex-col items-center gap-20 py-20">
     <div
-      class="text-primary-content glass rounded-box -mt-48 grid w-full max-w-screen-xl gap-4 bg-opacity-60 xl:pb-0 md:w-4/5"
+      class="text-primary-content glass rounded-box -mt-48 grid w-full max-w-screen-xl gap-4 bg-opacity-60 transition-all duration-200 xl:pb-0 md:w-4/5"
     >
       <div class="text-sm text-center -mt-5 self-center">
         {{ article.date }}

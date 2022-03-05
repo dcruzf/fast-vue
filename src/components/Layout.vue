@@ -6,11 +6,11 @@
       style="scroll-behavior: smooth; scroll-padding-top: 5rem"
     >
       <div
-        class="sticky top-0 z-30 flex h-16 w-full justify-center bg-opacity-90 backdrop-blur transition-all duration-100 text-primary-content"
+        class="sticky top-0 z-30 flex h-16 w-full justify-center bg-opacity-90 backdrop-blur text-primary-content"
       >
         <Navbar />
       </div>
-      <div class="">
+      <div class="" style="scroll-behavior: smooth; scroll-padding-top: 5rem">
         <Hero />
         <router-view />
       
