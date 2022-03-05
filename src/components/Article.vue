@@ -1,7 +1,7 @@
 <template>
   <div class="bg-base-200 flex flex-col items-center gap-20 py-20">
     <div
-      class="text-primary-content glass rounded-box -mt-48 max-w-screen-md xl:pb-0"
+      class="text-primary-content glass rounded-box -mt-48 grid w-full max-w-screen-xl gap-4 bg-opacity-60 xl:pb-0 md:w-4/5"
     >
       <div class="text-sm text-center -mt-5 self-center">
         {{ article.date }}
@@ -9,7 +9,7 @@
 
       <div id="article" class="flex flex-col py-20 px-10 pt-0 pb-10">
         <div class="text-center pb-10">
-          <h1 class="text-3xl font-bold pt-2">{{ article.title }}</h1>
+          <h1 class="text-3xl font-bold pt-5">{{ article.title }}</h1>
           <h2 class="text-2xl">{{ article.subtitle }}</h2>
         </div>
         <article

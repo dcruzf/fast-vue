@@ -1,56 +1,8 @@
 <script setup>
 import Card from "./Card.vue";
-
-const articles = [
-  {
-    id: 1,
-    title: "Meu título massa 1",
-    abstract:
-      "Qualquer coisas com alguns caracteres para fazer um bom valume no card. Qualquer coisas com alguns caracteres para fazer um bom valume no card.",
-  },
-  {
-    id: 2,
-    title: "Meu título massa 2",
-    abstract:
-      "Qualquer coisas com alguns caracteres para fazer um bom valume no card. Qualquer coisas com alguns caracteres para fazer um bom valume no card.",
-  },
-  {
-    id: 3,
-    title: "Meu título massa 3",
-    abstract:
-      "Qualquer coisas com alguns caracteres para fazer um bom valume no card. Qualquer coisas com alguns caracteres para fazer um bom valume no card.",
-  },
-  {
-    id: 4,
-    title: "Meu título massa 4",
-    abstract:
-      "Qualquer coisas com alguns caracteres para fazer um bom valume no card. Qualquer coisas com alguns caracteres para fazer um bom valume no card.",
-  },
-  {
-    id: 5,
-    title: "Meu título massa 5",
-    abstract:
-      "Qualquer coisas com alguns caracteres para fazer um bom valume no card. Qualquer coisas com alguns caracteres para fazer um bom valume no card.",
-  },
-  {
-    id: 6,
-    title: "Meu título massa 6",
-    abstract:
-      "Qualquer coisas com alguns caracteres para fazer um bom valume no card. Qualquer coisas com alguns caracteres para fazer um bom valume no card.",
-  },
-  {
-    id: 7,
-    title: "Meu título massa 7",
-    abstract:
-      "Qualquer coisas com alguns caracteres para fazer um bom valume no card. Qualquer coisas com alguns caracteres para fazer um bom valume no card.",
-  },
-  {
-    id: 8,
-    title: "Meu título massa 8",
-    abstract:
-      "Qualquer coisas com alguns caracteres para fazer um bom valume no card. Qualquer coisas com alguns caracteres para fazer um bom valume no card.",
-  },
-];
+import { useArticlesStore } from "../store/article";
+const store = useArticlesStore();
+const articles = store.articles
 </script>
 <template>
   <div class="bg-base-200 flex flex-col items-center gap-20 py-20">
@@ -69,7 +21,10 @@ const articles = [
         class="flex w-full grid grid-cols-1 items-center gap-4 overflow-x-auto px-10 pt-1 pb-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
       >
         <div v-for="article in articles" :key="article.id">
-          <Card :title="article.title" :abstract="article.abstract" />
+          <router-link :to="'/art/' + article.id">
+          <Card :title="article.title" :abstract="article.subtitle" />
+          </router-link>
+          
         </div>
       </div>
     </div>
