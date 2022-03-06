@@ -1,6 +1,6 @@
 <template>
   <div class="bg-base-100 drawer h-screen" :data-theme="store.theme">
-    <input id="drawer" type="checkbox" class="drawer-toggle" />
+    <input id="drawer" type="checkbox" class="drawer-toggle" v-model="drawerOpen"/>
     <div
       class="drawer-content"
       style="scroll-behavior: smooth; scroll-padding-top: 5rem"
@@ -16,7 +16,7 @@
       
       </div>
     </div>
-   <DrawerMenu />
+   <DrawerMenu @toggle="drawerOpen = false" />
   </div>
 </template>
 
@@ -28,6 +28,7 @@ import Navbar from "./NavBar.vue";
 import Hero from "./Hero.vue";
 import Card from "./Card.vue";
 const store = useThemeStore();
-</script>
 
+const drawerOpen = ref(false);
+</script>
 <style scoped></style>
