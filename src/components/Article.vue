@@ -1,5 +1,7 @@
 <template>
-  <div class="bg-base-200 flex flex-col items-center gap-20 py-20 px-5 sm:px-10">
+  <div
+    class="bg-base-200 flex flex-col items-center gap-20 py-20 px-5 sm:px-10"
+  >
     <div
       class="text-primary-content glass rounded-box -mt-48 grid w-full max-w-screen-xl gap-4 bg-opacity-60 transition-all duration-200 xl:pb-0 md:w-4/5"
     >
@@ -7,9 +9,16 @@
         {{ article.date }}
       </div>
 
-      <div id="article" class="flex flex-col py-20 px-5 sm:px-10 pt-0 pb-10 transition-all duration-200">
+      <div
+        id="article"
+        class="flex flex-col py-20 px-5 sm:px-10 pt-0 pb-10 transition-all duration-200"
+      >
         <div class="text-center pb-10">
-          <h1 class="sm:text-3xl font-bold sm:pt-5 pt-0 text-lg transition-all duration-200">{{ article.title }}</h1>
+          <h1
+            class="sm:text-3xl font-bold sm:pt-5 pt-0 text-lg transition-all duration-200"
+          >
+            {{ article.title }}
+          </h1>
           <h2 class="text-2lg sm:text-2xl">{{ article.subtitle }}</h2>
         </div>
         <article
@@ -32,13 +41,11 @@ const store = useArticlesStore();
 function getArticleOr404(articleId) {
   let article = store.articleById(articleId);
   if (!article) {
-    router.push("1");
-    article = store.articleById(1);
+    router.push("/");
   }
   return article;
 }
 const article = getArticleOr404(route.params.id);
 </script>
 
-<style>
-</style>
+<style></style>

@@ -1,10 +1,9 @@
 <script setup>
-import {useArticlesStore} from '../store/article';
+import { useArticlesStore } from "../store/article";
 defineEmits(["toggle"]);
 
 const store = useArticlesStore();
-const tags = store.allTags
-
+const tags = store.allTags;
 </script>
 <template>
   <div
@@ -13,9 +12,7 @@ const tags = store.allTags
   >
     <label for="drawer" class="drawer-overlay"></label>
     <aside class="w-80 bg-primary bg-blend-hue bg-opacity-80">
-      <div
-        class="z-20 sticky top-0 items-center gap-2 px-4 py-2 shadow-sm"
-      >
+      <div class="z-20 sticky top-0 items-center gap-2 px-4 py-2 shadow-sm">
         <div
           class="text-primary-content text-bold text-lg text-center transition-all duration-200 md:text-3xl"
         >
@@ -34,18 +31,30 @@ const tags = store.allTags
         </li>
       </ul>
       <ul
-      v-for="tag in tags"
-      :key="tag"
-      class="menu menu-compact flex flex-col px-5 text-primary-content text-xl">
-      <li>
-        <router-link :to="/tag/ + tag" class="flex gap-4 hover:glass">
-        <span class="flex-1">{{ tag }}</span>
-        </router-link>
-      </li>
-      </ul>
-      <ul class="menu menu-compact flex flex-col px-5 text-primary-content text-xl">
+        v-for="tag in tags"
+        :key="tag.tagId"
+        class="menu menu-compact flex flex-col px-5 text-primary-content text-xl"
+      >
         <li>
-          <router-link to="/art/1" class="flex gap-4 hover:glass">
+          <router-link
+            :to="/tag/ + tag.tagId"
+            class="flex gap-4 hover:glass"
+            @click="$emit('toggle')"
+          >
+            <span class="flex-none material-icons">{{ tag.icon }}</span>
+            <span class="flex-1">{{ tag.name }}</span>
+          </router-link>
+        </li>
+      </ul>
+      <ul
+        class="menu menu-compact flex flex-col px-5 text-primary-content text-xl"
+      >
+        <li>
+          <router-link
+            to="/about"
+            class="flex gap-4 hover:glass"
+            @click="$emit('toggle')"
+          >
             <span class="flex-none material-icons">person</span>
             <span class="flex-1">about</span>
           </router-link>

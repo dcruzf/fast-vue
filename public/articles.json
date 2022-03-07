@@ -1,8 +1,8 @@
 { 
-  "tags": ["tag1", "tag2", "tag3"],
+  "tags": [{"name": "tag1", "tagId": "tag1", "icon":"home"}, {"name": "tag2", "tagId": "tag2", "icon":"home"}, {"name": "tag3", "tagId": "tag3", "icon":"home"}],
   "articles": [
   {
-    "id": 1,
+    "id": "modern-python-environments",
     "title": "Modern Python Environments",
     "subtitle": "Dependency and workspace management",
     "abstract": "test",
@@ -19,7 +19,7 @@
     "text": "## Dependency and workspace management",
     "date": "March, 2 2022",
     "author": "Daniel",
-    "tags": ["tag1", "tag2", "tag3"]
+    "tags": ["tag1", "tag2"]
   },
   {
     "id": 3,
@@ -29,7 +29,7 @@
     "text": "test",
     "date": "March, 2 2022",
     "author": "Daniel",
-    "tags": ["tag2", "tag3"]
+    "tags": ["tag2"]
   },
   {
     "id": 4,
@@ -89,7 +89,7 @@
     "text": "test",
     "date": "March, 2 2022",
     "author": "Daniel",
-    "tags": ["tag2", "tag3"]
+    "tags": ["tag2"]
   }
 ]
 }
