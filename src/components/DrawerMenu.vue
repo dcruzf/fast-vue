@@ -3,6 +3,7 @@ import { useArticlesStore } from "../store/article";
 defineEmits(["toggle"]);
 
 const store = useArticlesStore();
+const history = store.history;
 const tags = store.allTags;
 </script>
 <template>
@@ -20,11 +21,11 @@ const tags = store.allTags;
         </div>
       </div>
       <ul
-        class="menu menu-compact flex flex-col px-5 text-primary-content text-xl"
+        class="menu flex flex-col px-5 text-primary-content text-xl"
         @click="$emit('toggle')"
       >
-        <li>
-          <router-link to="/" class="flex gap-4 hover:glass">
+        <li class="hover-bordered">
+          <router-link to="/" class="flex gap-4">
             <span class="flex-none material-icons">home</span>
             <span class="flex-1">home</span>
           </router-link>
@@ -33,28 +34,51 @@ const tags = store.allTags;
       <ul
         v-for="tag in tags"
         :key="tag.tagId"
-        class="menu menu-compact flex flex-col px-5 text-primary-content text-xl"
+        class="menu flex flex-col px-5 text-primary-content text-xl"
       >
-        <li>
+        <li class="hover-bordered">
           <router-link
             :to="/tag/ + tag.tagId"
-            class="flex gap-4 hover:glass"
+            class="flex gap-4"
             @click="$emit('toggle')"
           >
             <span class="flex-none material-icons">{{ tag.icon }}</span>
+
             <span class="flex-1">{{ tag.name }}</span>
           </router-link>
         </li>
       </ul>
-      <ul
-        class="menu menu-compact flex flex-col px-5 text-primary-content text-xl"
-      >
-        <li>
-          <router-link
-            to="/about"
-            class="flex gap-4 hover:glass"
-            @click="$emit('toggle')"
-          >
+
+      <!-- <div v-for="h in history" :key="h.year" class="group">
+        <ul
+          class="menu flex flex-col px-5 text-primary-content text-xl"
+          @click="$emit('toggle')"
+        >
+          <li class="hover-bordered">
+            <router-link
+              :to="/date/ + h.year"
+              @click="$emit('toggle')"
+              class="flex gap-4"
+            >
+              <span class="flex-none material-icons">calendar_month</span>
+              <span class="flex-1">{{ h.year }}</span>
+            </router-link>
+          </li>
+        </ul>
+        <ul
+          v-for="m in h.months"
+          :key="m"
+          class="menu menu-compact flex-col text-primary-content text-sm pl-10 hidden group-hover:block"
+        >
+          <li class="hover-bordered">
+            <router-link :to="/date/ + h.year">{{ m }}</router-link>
+          </li>
+        </ul>
+      </div> -->
+
+      <ul class="menu flex flex-col px-5 text-primary-content text-xl">
+        <li class="hover-bordered">
+          <router-link to="/about" class="flex gap-4" @click="$emit('toggle')">
             <span class="flex-none material-icons">person</span>
             <span class="flex-1">about</span>
           </router-link>

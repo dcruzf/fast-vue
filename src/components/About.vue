@@ -34,18 +34,9 @@
 import { useRoute, useRouter } from "vue-router";
 import { useArticlesStore } from "../store/article";
 
-const route = useRoute();
-const router = useRouter();
 const store = useArticlesStore();
 
-function getArticleOr404(articleId) {
-  let article = store.articleById(articleId);
-  if (!article) {
-    router.go("/");
-  }
-  return article;
-}
-const article = getArticleOr404(route.params.id);
+const article = store.about;
 </script>
 
 <style></style>

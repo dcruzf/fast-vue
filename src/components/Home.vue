@@ -1,5 +1,5 @@
 <script setup>
-import { ref, reactive, watch} from 'vue'
+import { ref, reactive, watch } from "vue";
 import Card from "./Card.vue";
 import { useArticlesStore } from "../store/article";
 import { useRoute } from "vue-router";
@@ -16,14 +16,14 @@ function getArticles(tagName) {
   }
 }
 
-const articles = reactive({ articles: getArticles(tagName.value)});
+const articles = reactive({ articles: getArticles(tagName.value) });
 
 watch(
-  () => route.params.tagName, (tag) => {
+  () => route.params.tagName,
+  (tag) => {
     articles.articles = getArticles(tag);
   }
-)
-
+);
 </script>
 <template>
   <div class="bg-base-200 flex flex-col items-center gap-20 py-20">
@@ -44,7 +44,7 @@ watch(
         class="grid grid-cols-1 items-center gap-4 overflow-x-auto px-10 pt-1 pb-10 transition-all duration-200 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
       >
         <div v-for="article in articles.articles" :key="article.id">
-          <router-link :to="'/art/' + article.id">
+          <router-link :to="'/article/' + article.id">
             <Card :title="article.title" :abstract="article.subtitle" />
           </router-link>
         </div>
