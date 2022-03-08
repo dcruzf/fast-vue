@@ -1,0 +1,116 @@
+{ 
+  "tags": [{"name": "tag1", "tagId": "tag1", "icon":"text_snippet"}, {"name": "tag2", "tagId": "tag2", "icon":"read_more"}, {"name": "tag3", "tagId": "tag3", "icon":"align_horizontal_right"}],
+  "history": [{"year": 2022, "months":["March", "February", "November", "December"]}, {"year": 2021, "months":["February", "March", "November", "December"]}],
+  "about": {
+    "id": "me",
+    "title": "Daniel França",
+    "subtitle": "Dependency and workspace management",
+    "abstract": "test",
+    "text": "<p>Once you get through the pain of setting up a Python environment for a single \"hello world\" application, you'll need to go through an even more difficult process of figuring out how to manage multiple environments for multiple Python projects. Some of the projects could be new while others are stale piles of code from ten years ago. Fortunately, there a number of tools available to help make dependency and workspace management easier.</p><p>Once you get through the pain of setting up a Python environment for a single \"hello world\" application, you'll need to go through an even more difficult process of figuring out how to manage multiple environments for multiple Python projects. Some of the projects could be new while others are stale piles of code from ten years ago. Fortunately, there a number of tools available to help make dependency and workspace management easier.</p><p>Once you get through the pain of setting up a Python environment for a single \"hello world\" application, you'll need to go through an even more difficult process of figuring out how to manage multiple environments for multiple Python projects. Some of the projects could be new while others are stale piles of code from ten years ago. Fortunately, there a number of tools available to help make dependency and workspace management easier.</p>",
+    "date": "",
+    "author": "Daniel",
+    "tags": ["tag1", "tag2", "tag3"],
+    "dates": {"year": 2022, "month": "March", "day": 7}
+  }, 
+  "articles": [
+  {
+    "id": "modern-python-environments",
+    "title": "Modern Python Environments",
+    "subtitle": "Dependency and workspace management",
+    "abstract": "test",
+    "text": "<p>Once you get through the pain of setting up a Python environment for a single \"hello world\" application, you'll need to go through an even more difficult process of figuring out how to manage multiple environments for multiple Python projects. Some of the projects could be new while others are stale piles of code from ten years ago. Fortunately, there a number of tools available to help make dependency and workspace management easier.</p><p>Once you get through the pain of setting up a Python environment for a single \"hello world\" application, you'll need to go through an even more difficult process of figuring out how to manage multiple environments for multiple Python projects. Some of the projects could be new while others are stale piles of code from ten years ago. Fortunately, there a number of tools available to help make dependency and workspace management easier.</p><p>Once you get through the pain of setting up a Python environment for a single \"hello world\" application, you'll need to go through an even more difficult process of figuring out how to manage multiple environments for multiple Python projects. Some of the projects could be new while others are stale piles of code from ten years ago. Fortunately, there a number of tools available to help make dependency and workspace management easier.</p>",
+    "date": "March, 2 2022",
+    "author": "Daniel",
+    "tags": ["tag1", "tag2", "tag3"],
+    "dates": {"year": 2022, "month": "March", "day": 7}
+  },
+  {
+    "id": 2,
+    "title": "Modern Python Environments",
+    "subtitle": "Dependency and workspace management",
+    "abstract": "## Dependency and workspace management",
+    "text": "## Dependency and workspace management",
+    "date": "March, 2 2022",
+    "author": "Daniel",
+    "tags": ["tag1", "tag2"],
+    "dates": {"year": 2022, "month": "January", "day": 7}
+  },
+  {
+    "id": 3,
+    "title": "t",
+    "subtitle": "T",
+    "abstract": "test",
+    "text": "test",
+    "date": "March, 2 2022",
+    "author": "Daniel",
+    "tags": ["tag2"],
+    "dates": {"year": 2022, "month": "February", "day": 7}
+  },
+  {
+    "id": 4,
+    "title": "t",
+    "subtitle": "T",
+    "abstract": "test",
+    "text": "test",
+    "date": "March, 2 2022",
+    "author": "Daniel",
+    "tags": ["tag2", "tag3"],
+    "dates": {"year": 2021, "month": "March", "day": 7}
+  },
+  {
+    "id": 5,
+    "title": "t",
+    "subtitle": "T",
+    "abstract": "test",
+    "text": "test",
+    "date": "March, 2 2022",
+    "author": "Daniel",
+    "tags": ["tag2", "tag3"],
+    "dates": {"year": 2022, "month": "December", "day": 7}
+  },
+  {
+    "id": 6,
+    "title": "t",
+    "subtitle": "T",
+    "abstract": "test",
+    "text": "test",
+    "date": "March, 2 2022",
+    "author": "Daniel",
+    "tags": ["tag2", "tag3"],
+    "dates": {"year": 2022, "month": "November", "day": 7}
+  },
+  {
+    "id": 7,
+    "title": "t",
+    "subtitle": "T",
+    "abstract": "test",
+    "text": "test",
+    "date": "March, 2 2022",
+    "author": "Daniel",
+    "tags": ["tag2", "tag3"],
+    "dates": {"year": 2022, "month": "October", "day": 7}
+  },
+  {
+    "id": 8,
+    "title": "t",
+    "subtitle": "T",
+    "abstract": "test",
+    "text": "test",
+    "date": "March, 2 2022",
+    "author": "Daniel",
+    "tags": ["tag2", "tag3"],
+    "dates": {"year": 2022, "month": "June", "day": 7}
+  },
+  {
+    "id": 9,
+    "title": "t",
+    "subtitle": "T",
+    "abstract": "test",
+    "text": "test",
+    "date": "March, 2 2022",
+    "author": "Daniel",
+    "tags": ["tag2"],
+    "dates": {"year": 2022, "month": "July", "day": 7}
+  }
+]
+}
