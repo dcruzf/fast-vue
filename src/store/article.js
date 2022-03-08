@@ -1,12 +1,11 @@
 import { defineStore } from "pinia";
-import dataJSON from "../assets/articles.json";
-
+import data from "../../public/data/data.json";
 export const useArticlesStore = defineStore("articlesStore", {
   state: () => ({
-    articles: dataJSON.articles,
-    tags: dataJSON.tags,
-    history: dataJSON.history,
-    about: dataJSON.about,
+    articles: data.articles,
+    tags: data.tags,
+    history: data.history,
+    about: data.about,
   }),
   getters: {
     all: (state) => state.articles,
