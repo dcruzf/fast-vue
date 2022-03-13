@@ -45,7 +45,7 @@ watch(
           <Card title="Loading..." abstract="..." />
         </div>
         <div v-else v-for="article in articles" :key="article.id">
-          <router-link :to="'/article/' + article.id">
+          <router-link :to="{name: 'articleComp', params: {'id': article.id}}">
             <Card :title="article.title" :abstract="article.subtitle" />
           </router-link>
         </div>
