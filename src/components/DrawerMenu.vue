@@ -3,8 +3,6 @@ import { useArticlesStore } from "../store/article";
 defineEmits(["toggle"]);
 
 const store = useArticlesStore();
-const history = store.history;
-const tags = store.allTags;
 </script>
 <template>
   <div
@@ -25,20 +23,20 @@ const tags = store.allTags;
         @click="$emit('toggle')"
       >
         <li class="hover-bordered">
-          <router-link to="/" class="flex gap-4">
+          <router-link :to="{ name: 'homeComp' }" class="flex gap-4">
             <span class="flex-none material-icons">home</span>
             <span class="flex-1">home</span>
           </router-link>
         </li>
       </ul>
       <ul
-        v-for="tag in tags"
+        v-for="tag in store.tags"
         :key="tag.tagId"
         class="menu flex flex-col px-5 text-primary-content text-xl"
       >
         <li class="hover-bordered">
           <router-link
-            :to="/tag/ + tag.tagId"
+            :to="{ name: 'tagsComp', params: {tagName: tag.tagId}}"
             class="flex gap-4"
             @click="$emit('toggle')"
           >
@@ -78,7 +76,7 @@ const tags = store.allTags;
 
       <ul class="menu flex flex-col px-5 text-primary-content text-xl">
         <li class="hover-bordered">
-          <router-link to="/about" class="flex gap-4" @click="$emit('toggle')">
+          <router-link :to="{name: 'aboutComp'}" class="flex gap-4" @click="$emit('toggle')">
             <span class="flex-none material-icons">person</span>
             <span class="flex-1">about</span>
           </router-link>

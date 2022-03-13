@@ -1,27 +1,25 @@
 <script setup>
 import { ref, reactive, watch } from "vue";
+import { storeToRefs } from 'pinia'
 import Card from "./Card.vue";
 import { useArticlesStore } from "../store/article";
 import { useRoute } from "vue-router";
 const store = useArticlesStore();
 const route = useRoute();
-const tagName = ref(route.params.tagName);
 
-function getArticles(tagName) {
-  let articlesByTag = store.articlesByTag(tagName);
-  if (articlesByTag.length) {
-    return articlesByTag;
-  } else {
-    return store.all;
-  }
-}
+const articles = ref( store.all );
 
-const articles = reactive({ articles: getArticles(tagName.value) });
 
 watch(
-  () => route.params.tagName,
-  (tag) => {
-    articles.articles = getArticles(tag);
+  () => route.params,
+  (tagName) => {
+    articles.value = store.articlesByTag(route.params.tagName)
+  }
+);
+watch(
+  () => store.articles,
+  () => {
+    articles.value = store.articlesByTag(route.params.tagName)
   }
 );
 </script>
@@ -43,7 +41,10 @@ watch(
         id="component-demo"
         class="grid grid-cols-1 items-center gap-4 overflow-x-auto px-10 pt-1 pb-10 transition-all duration-200 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
       >
-        <div v-for="article in articles.articles" :key="article.id">
+        <div v-if="store.articles === null">
+          <Card title="Loading..." abstract="..." />
+        </div>
+        <div v-else v-for="article in articles" :key="article.id">
           <router-link :to="'/article/' + article.id">
             <Card :title="article.title" :abstract="article.subtitle" />
           </router-link>
